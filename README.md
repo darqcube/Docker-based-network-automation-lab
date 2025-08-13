@@ -37,35 +37,6 @@ docker-compose up --build
 ```
 This will build and start all services. Nornir will automatically run the deployment workflow.
 
-## File Structure
-
-
-Docker-based network automation lab/
-│
-├── docker-compose.yml
-├── Dockerfile.infrahub
-├── Dockerfile.nornir
-├── Dockerfile.pyats
-├── README.md
-├── requirements.nornir.txt
-├── requirements.pyats.txt
-│
-├── shared_data/
-│   ├── configs/
-│   ├── logs/
-│   └── results/
-│
-└── workflow/
-    ├── nornir_deploy.py
-    ├── pyats_server.py
-    ├── pyats_test.py
-    ├── templates/
-    │   └── base_config.j2
-    └── textfsm_templates/
-        ├── huawei_display_interface.tpl
-        └── huawei_display_version.tpl
-
-
 ## Results
 
 - **Instant check:** `shared_data/configs/<device>_instant_check.json`

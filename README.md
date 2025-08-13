@@ -2,7 +2,7 @@
 # Docker-based Network Automation Lab — Infrahub + Nornir + PyATS + TextFSM
 
 ## Overview
-This project provides a Docker-based lab for automated network configuration and verification. It integrates three main components:
+This project provides a Docker-based lab for automated network configuration and verification. It integrates seven main components:
 
 - **Infrahub (OpsMills):** Stores network inventory (IP addresses, device parameters).
 - **Nornir + Netmiko + Jinja2 + TextFSM:** Automated configuration generation and Deploys configs, parses output for instant checks.

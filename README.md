@@ -1,3 +1,4 @@
+
 # Docker-based Network Automation Lab — Infrahub + Nornir + PyATS + TextFSM
 
 ## Overview
@@ -38,32 +39,31 @@ This will build and start all services. Nornir will automatically run the deploy
 
 ## File Structure
 
-network-automation-lab/
+
+Docker-based network automation lab/
 │
 ├── docker-compose.yml
 ├── Dockerfile.infrahub
 ├── Dockerfile.nornir
 ├── Dockerfile.pyats
-│
+├── README.md
 ├── requirements.nornir.txt
 ├── requirements.pyats.txt
 │
-├── README.md
-│
-├── shared_data/                  # Shared between Nornir & PyATS
-│   ├── configs/                   # Generated configs
-│   ├── logs/                      # Deployment logs
-│   └── results/                   # PyATS raw & parsed results
+├── shared_data/
+│   ├── configs/
+│   ├── logs/
+│   └── results/
 │
 └── workflow/
-    ├── nornir_deploy.py           # Deployment + instant TextFSM checks
-    ├── pyats_server.py            # Flask API to trigger tests
-    ├── pyats_test.py              # Huawei-aware PyATS runner with TextFSM
+    ├── nornir_deploy.py
+    ├── pyats_server.py
+    ├── pyats_test.py
     ├── templates/
-    │   └── base_config.j2         # Jinja2 base template
-    └── textfsm_templates/         # Huawei VRP TextFSM templates
-        ├── huawei_display_version.tpl
-        └── huawei_display_interface.tpl
+    │   └── base_config.j2
+    └── textfsm_templates/
+        ├── huawei_display_interface.tpl
+        └── huawei_display_version.tpl
 
 
 ## Results

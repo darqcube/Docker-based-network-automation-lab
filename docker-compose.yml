@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  infrahub:
+    build:
+      context: .
+      dockerfile: Dockerfile.infrahub
+    container_name: infrahub
+    hostname: infrahub
+    ports:
+      - "8000:8000"
+    networks:
+      - netlab
+    volumes:
+      - ./shared_data:/workspace/shared_data
+
+  pyats:
+    build:
+      context: .
+      dockerfile: Dockerfile.pyats
+    container_name: pyats
+    hostname: pyats
+    ports:
+      - "5000:5000"
+    networks:
+      - netlab
+    volumes:
+      - ./shared_data:/workspace/shared_data
+      - .:/workspace
+    environment:
+      - PYATS_HOST=0.0.0.0
+      - PYATS_PORT=5000
+
+  nornir:
+    build:
+      context: .
+      dockerfile: Dockerfile.nornir
+    container_name: nornir
+    hostname: nornir
+    depends_on:
+      - infrahub
+      - pyats
+    networks:
+      - netlab
+    volumes:
+      - ./shared_data:/workspace/shared_data
+      - .:/workspace
+    stdin_open: true
+    tty: true
+
+networks:
+  netlab:
+    driver: bridge

@@ -1,0 +1,8 @@
+pyats
+genie
+pyats.contrib
+flask
+pyyaml
+requests
+textfsm
+netmiko

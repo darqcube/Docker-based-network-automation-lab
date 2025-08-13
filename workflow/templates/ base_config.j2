@@ -1,0 +1,10 @@
+hostname {{ host }}
+!
+interface Loopback0
+ ip address {{ ip }} 255.255.255.255
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+end

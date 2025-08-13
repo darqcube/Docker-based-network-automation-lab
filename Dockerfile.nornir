@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+
+WORKDIR /workspace
+
+RUN apt-get update && apt-get install -y git curl build-essential && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.nornir.txt /workspace/
+RUN pip install --no-cache-dir -r requirements.nornir.txt
+
+COPY . /workspace
+
+CMD ["python", "workflow/nornir_deploy.py"]

@@ -1,0 +1,9 @@
+nornir
+nornir-jinja2
+nornir_netmiko
+netmiko
+jinja2
+pyyaml
+requests
+rich
+textfsm
